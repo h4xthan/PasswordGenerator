@@ -1,5 +1,6 @@
 import string
 import random
+
 def generate_password(length, use_letters = True, use_numbers = True, use_special_chars = True):
     characters = ''
     if use_letters:
@@ -16,16 +17,16 @@ def generate_password(length, use_letters = True, use_numbers = True, use_specia
                 (use_special_chars and any(c in string.punctuation for c in password)):
                     return password
 
-num_passwords = int(input('Ingresa el numero de contraseñas a generar => '))
-length = int(input('Ingresa de cuantos caracteres sera tu contraseña => '))
+num_passwords = int(input('Enter the number of passwords to be generated => '))
+length = int(input('Enter how many characters long your password will be (recommended to be longer than 8 characters) => '))
 
-use_letters = input('Quieres incluir letras? (y/n) ').lower() == 'y'
-use_numbers = input('Quieres incluir numeros? (y/n) ').lower() == 'y'
-use_special_chars = input('Quieres incluir caracteres especiales? (y/n) ').lower() == 'y'
+use_letters = input('Do you want to include letters? (y/n) ').lower() == 'y'
+use_numbers = input('Do you want to include numbers? (y/n) ').lower() == 'y'
+use_special_chars = input('Do you want to include special characters? (y/n) ').lower() == 'y'
 
 passwords = []
 for i in range(num_passwords):
     password = generate_password(length, use_letters, use_numbers, use_special_chars)
     passwords.append(password)
     
-print('Tus contraseñas generadas son => ', passwords)
+print('Your generated passwords are => ', passwords)
