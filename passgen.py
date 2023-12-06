@@ -35,7 +35,7 @@ for i in range(num_passwords):
     passwords.append(password)
 
 # Open a file to write the generated passwords
-with open('passwords.txt', 'w') as file:
+with open('passwords.txt', 'a') as file:
     for password in passwords:
         file.write(password + '\n')
 
